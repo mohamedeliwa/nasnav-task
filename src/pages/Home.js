@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 import Controllers from "../components/Controllers";
 import Header from "../components/Header";
+import ShoppingByCategory from "../components/ShoppingByCategory";
 
 const Wrapper = styled.div`
   background: #eee;
@@ -25,8 +26,7 @@ const Home = () => {
     <Wrapper>
       <Controllers />
       <Header />
-      <h1>Home Page</h1>
-      <StyledButton>Heelo button</StyledButton>
+      <ShoppingByCategory />
     </Wrapper>
   );
 };
