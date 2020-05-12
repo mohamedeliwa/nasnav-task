@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 import Controllers from "../components/Controllers";
+import Header from "../components/Header";
 
 const Wrapper = styled.div`
   background: #eee;
@@ -23,6 +24,7 @@ const Home = () => {
   return (
     <Wrapper>
       <Controllers />
+      <Header />
       <h1>Home Page</h1>
       <StyledButton>Heelo button</StyledButton>
     </Wrapper>
