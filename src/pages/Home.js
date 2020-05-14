@@ -5,6 +5,7 @@ import Controllers from "../components/Controllers";
 import Header from "../components/Header";
 import ShoppingByCategory from "../components/ShoppingByCategory";
 import BrowseByBranch from "../components/BrowseByBranch";
+import HotDeals from "../components/HotDeals";
 
 const Wrapper = styled.div`
   background: #eee;
@@ -29,6 +30,7 @@ const Home = () => {
       <Header />
       <ShoppingByCategory />
       <BrowseByBranch />
+      <HotDeals />
     </Wrapper>
   );
 };

@@ -78,6 +78,7 @@ const Branch = styled(Container)`
   justify-content: center;
   align-items: center;
   z-index: 2;
+  cursor: pointer;
 `;
 const Image360 = styled.img`
   //   width: 283px;

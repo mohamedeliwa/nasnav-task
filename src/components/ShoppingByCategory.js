@@ -196,14 +196,15 @@ const ShoppingByCategory = () => {
     slidesToScroll: 1,
   };
 
-  const SliderCards = sliderImagesArr.map((image) => {
+  const SliderCards = sliderImagesArr.map((image, i) => {
     return (
       <SliderCard
         top={image.top}
         left={image.left}
-        bg={image.bg || false}
+        bg={image.bg || null}
         width={image.width}
         height={image.height}
+        key={i}
       >
         <section>
           <Image src={image.path} alt="First slide" />
