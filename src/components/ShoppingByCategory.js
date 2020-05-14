@@ -54,7 +54,7 @@ const sliderImagesArr = [
 ];
 
 const Wrapper = styled(Container)`
-  height: 468px;
+  // height: 468px;
   background-color: #ffffff;
   //  background-color: #eee;
   padding: 0;

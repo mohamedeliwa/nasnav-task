@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Controllers from "../components/Controllers";
 import Header from "../components/Header";
 import ShoppingByCategory from "../components/ShoppingByCategory";
+import BrowseByBranch from "../components/BrowseByBranch";
 
 const Wrapper = styled.div`
   background: #eee;
@@ -27,6 +28,7 @@ const Home = () => {
       <Controllers />
       <Header />
       <ShoppingByCategory />
+      <BrowseByBranch />
     </Wrapper>
   );
 };
