@@ -16,6 +16,34 @@ const Wrapper = styled(Container)`
   background-color: #0056a8;
   display: flex;
   align-items: center;
+  padding: 0;
+  @media(max-width: 710px) {
+    .main-container1, .main-container2 {
+      padding: 0;
+    }
+    .main-container1 {
+     flex-basis: 40%;
+    }
+    .main-container2{
+     flex-basis: 60%;
+    }
+  }
+  @media(max-width: 571px){
+    height: 91px;
+    flex-direction: column;
+    .main-container1, .main-container2 {
+      padding-top: 5px;
+    }
+  }
+  @media(max-width: 318px){
+    .main-container2 {
+      display: flex;
+      button {
+        font-weight: 400;
+      }
+    }
+  }
+  
 `;
 
 const StyledImage = styled(Image)`
@@ -71,7 +99,7 @@ const StyledButton = styled.button`
 const Paymentbar = () => {
   return (
     <Wrapper fluid>
-    <Container>
+    <Container className="main-container1" /*style={{background: "yellow"}}*/>
       <StyledImage src={mastercard1} rounded className="" />
       <StyledImage src={mastercard2} rounded className="" />
       <StyledImage src={visa} rounded className="" />
@@ -82,7 +110,7 @@ const Paymentbar = () => {
         <option value="3">USD</option>
       </StyledSelect>
     </Container>
-    <Container>
+    <Container className="main-container2" /*style={{background: "lightgreen"}}*/>
     <StyledButton><TiLocationOutline style={{fontSize: "20px"}} /> Stores</StyledButton>
     <StyledButton><IoIosTimer style={{fontSize: "20px"}} /> WorksTime</StyledButton>
     <StyledButton><FiPhone style={{fontSize: "20px"}} /> Contact</StyledButton>
