@@ -14,11 +14,12 @@ import {
 
 // Styles using Styled-Component
 const Wrapper = styled(Container)`
-  height: 58px;
+  min-height: 58px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 
 const StyledButton = styled.button`
