@@ -8,7 +8,8 @@ import Navbar from "./Navbar";
 
 // Styles using Styled-Component
 const Wrapper = styled(Container)`
-  height: 224px;
+  // height: 224px;
+  height: auto;
 //   background-color: #0056a8;
 //   display: flex;
 //   align-items: center;
