@@ -129,6 +129,11 @@ const Card = styled(Container)`
       background-color: #f62434;
       color: white;
       margin-left: 13px;
+      &:focus,
+      &:active {
+        outline: none !important;
+        box-shadow: none;
+      }
     }
   }
   .card-updated {
@@ -207,10 +212,10 @@ const sliderCards = cardsArray.map((card, i) => {
             <img src={card.img} />
           </div>
           <div className="card-price">
-            <p className="current-price">${card.cPrice}</p>
-            <p className="prev-price">${card.pPrice}</p>
+            <p className="current-price">{card.cPrice}</p>
+            <p className="prev-price">{card.pPrice}</p>
           </div>
-          <div className="card-name">${card.name}</div>
+          <div className="card-name">{card.name}</div>
           <div className="card-select">
             <select name="num" id="num-select">
               <option value="5">5</option>
@@ -221,7 +226,7 @@ const sliderCards = cardsArray.map((card, i) => {
             <button>Add</button>
           </div>
           <div className="card-updated">
-            <p>Last Update: ${card.updated}</p>
+            <p>Last Update: {card.updated}</p>
           </div>
         </Card>
       </Container>

@@ -6,9 +6,11 @@ import Header from "../components/Header";
 import ShoppingByCategory from "../components/ShoppingByCategory";
 import BrowseByBranch from "../components/BrowseByBranch";
 import HotDeals from "../components/HotDeals";
+import OurProducts from "../components/OurProducts";
+import Footer from "../components/Footer";
 
 const Wrapper = styled.div`
-  background: #eee;
+  // background: #eee;
 `;
 const StyledButton = styled(Button)`
   font-size: 1em;
@@ -31,6 +33,8 @@ const Home = () => {
       <ShoppingByCategory />
       <BrowseByBranch />
       <HotDeals />
+      <OurProducts />
+      <Footer />
     </Wrapper>
   );
 };
