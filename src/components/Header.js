@@ -9,6 +9,7 @@ const Wrapper = styled(Container)`
   height: 474px;
   background-color: #ffffff;
   padding: 0;
+  position: relative;
   //   display: flex;
   //   align-items: center;
   //   justify-content: center;
@@ -16,6 +17,7 @@ const Wrapper = styled(Container)`
 
 const StyledCarousel = styled(Carousel)`
   height: 474px;
+
   overflow: hidden;
 `;
 
@@ -76,12 +78,119 @@ const StyledCaption = styled(Carousel.Caption)`
     bottom: 36px;
     cursor: pointer;
   }
+  @media (max-width: 1200px) {
+    max-width: 622px;
+    padding: 36px 75px 26px 75px;
+    div {
+      right: 20px;
+      bottom: 10px;
+    }
+  }
+  @media (max-width: 1020px) {
+    max-width: 522px;
+    padding: 36px 75px 36px 36px;
+  }
+  @media (max-width: 797px) {
+    max-width: 422px;
+    max-height: 250px;
+    h3 {
+      font-size: 23px;
+      line-height: normal;
+    }
+    P {
+      font-size: 16px;
+    }
+    padding: 26px 46px 26px 26px;
+  }
+  @media (max-width: 575px) {
+    max-width: 415px;
+    padding: 20px 46px 26px 10px;
+    h3 {
+      font-size: 20px;
+      line-height: normal;
+      // font-weight: 400;
+    }
+    P {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+  }
+  @media (max-width: 505px) {
+    div {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  @media (max-width: 482px) {
+    padding: 10px 36px 5px 5px;
+    h3 {
+      font-size: 18px;
+    }
+    P {
+      font-size: 15px;
+    }
+    div {
+      right: 5px;
+      bottom: 5px;
+    }
+  }
+  @media (max-width: 449px) {
+    max-height: 70px;
+    top: 190px;
+    p {
+      display: none;
+    }
+  }
+  @media (max-width: 444px) {
+    padding: 5px 5px 5px 5px;
+    min-height: 40px;
+    top: 170px;
+    h3 {
+      font-size: 12px;
+      br {
+        display: none;
+      }
+    }
+    div {
+      width: 25px;
+      height: 25px;
+      top: 1px;
+      font-size: 25px;
+      color: #0056a8;
+      background: #ffffff;
+      box-shadow: none;
+
+    }
+  }
+  @media (max-width: 359px) {
+    padding: 5px 50px 5px 5px;
+    top: 150px;
+  }
+  @media (max-width: 326px){
+    top: 120px;
+  }
 `;
 const Indicators = styled.div`
   display: inline-flex;
   position: absolute;
   right: 68px;
-  top: 384px;
+  bottom: 64px;
+
+  @media (max-width: 797px) {
+    right: 38px;
+    bottom: 40px;
+  }
+
+  @media (max-width: 715px) {
+    bottom: 60px;
+  }
+  @media (max-width: 682px) {
+    bottom: 90px;
+  }
+  @media (max-width: 638px) {
+    right: 20px;
+    top: 10px;
+  }
 `;
 
 const Indicator = styled.div`
@@ -95,8 +204,7 @@ const Indicator = styled.div`
 `;
 
 const Header = () => {
-    const [index, setIndex] = useState(0);
-
+  const [index, setIndex] = useState(0);
 
   const handleSelect = (e) => {
     const ind = document.querySelectorAll(".ind");
@@ -107,25 +215,21 @@ const Header = () => {
       ind.style.background = "#f62434";
     });
     e.target.style.background = "#f62434";
-    switch(e.target.id){
-        case "ind-1":
-            setIndex(0);
-            break;
-        case "ind-2":
-            setIndex(1);
-            break;
-        case "ind-3":
-            setIndex(2);
-            break;
+    switch (e.target.id) {
+      case "ind-1":
+        setIndex(0);
+        break;
+      case "ind-2":
+        setIndex(1);
+        break;
+      case "ind-3":
+        setIndex(2);
+        break;
     }
   };
   return (
     <Wrapper fluid>
-      <StyledCarousel
-        activeIndex={index}
-        controls={false}
-        indicators={false}
-      >
+      <StyledCarousel activeIndex={index} controls={false} indicators={false}>
         <Carousel.Item>
           <StyledImage
             className="d-block w-100"
@@ -192,30 +296,27 @@ const Header = () => {
             </div>
           </StyledCaption>
         </Carousel.Item>
-
-        <Indicators>
-          <Indicator
-            className="ind"
-            id="ind-1"
-            onClick={handleSelect}
-            active={true}
-          />
-          <Indicator
-            className="ind"
-            id="ind-2"
-            onClick={handleSelect}
-            active={false}
-          />
-          <Indicator
-            className="ind"
-            id="ind-3"
-            onClick={handleSelect}
-            active={false}
-          />
-        </Indicators>
-      
       </StyledCarousel>
-    
+      <Indicators>
+        <Indicator
+          className="ind"
+          id="ind-1"
+          onClick={handleSelect}
+          active={true}
+        />
+        <Indicator
+          className="ind"
+          id="ind-2"
+          onClick={handleSelect}
+          active={false}
+        />
+        <Indicator
+          className="ind"
+          id="ind-3"
+          onClick={handleSelect}
+          active={false}
+        />
+      </Indicators>
     </Wrapper>
   );
 };
