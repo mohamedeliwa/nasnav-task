@@ -79,7 +79,7 @@ const cardsArray = [
   },
 ];
 const Wrapper = styled(Container)`
-  //   background-color: #eee;
+
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -100,6 +100,14 @@ const StyledSlider = styled(Slider)`
   @media (max-width:  995px) {
     max-width: 650px;
   }
+  @media (max-width: 660px) {
+    width: 90vw;
+  }
+  @media (max-width: 479px) {
+    width: 80vw;
+  }
+`;
+const CardContainer = styled.div`
 `;
 const Card = styled(Container)`
   width: 298px;
@@ -109,21 +117,9 @@ const Card = styled(Container)`
   background-color: #ffffff;
   margin-top: 18px;
   padding: 0;
-  //   .card-header {
-  //     height: 45px;
-  //     border: solid 1px #e6ecef;
-  //     background-color: #f6f8f9;
-  //     font-family: Comfortaa;
-  //     font-size: 16px;
-  //     font-weight: bold;
-  //     font-stretch: normal;
-  //     font-style: normal;
-  //     letter-spacing: normal;
-  //     color: #303637;
-  //     span {
-  //       color: #f62434;
-  //     }
-  //   }
+  @media (max-width: 660px) {
+    margin: auto !important;
+  }
   .card-img {
     // background: red;
     display: flex;
@@ -276,7 +272,7 @@ const PrevArrow = styled.button`
 `;
 const sliderCards = cardsArray.map((card, i) => {
   return (
-    <Container key={i} style={{margin: "0 !important"}} fluid>
+    <CardContainer key={i}  >
       <Card>
         {/* <div className="card-header">
           Sale <span>${card.sale}</span>
@@ -302,7 +298,7 @@ const sliderCards = cardsArray.map((card, i) => {
           <p>Last Update: {card.updated}</p>
         </div>
       </Card>
-    </Container>
+    </CardContainer>
   );
 });
 const TabContent = () => {
