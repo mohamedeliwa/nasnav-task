@@ -7,7 +7,7 @@ import image3 from "../assets/images/Branches/Layer_25.png";
 import image4 from "../assets/images/Branches/Layer_26.png";
 import image5 from "../assets/images/Branches/Layer_360.png";
 const Wrapper = styled(Container)`
-  height: 416px;
+  min-height: 416px;
   background-color: #f6f8f9;
   //   background-color: #eee;
   //   padding: 0;
@@ -16,6 +16,7 @@ const Wrapper = styled(Container)`
   //   align-items: center;
   position: relative;
   overflow: hidden;
+  padding: 0;
   //   justify-content: center;
 `;
 const Header = styled(Container)`
@@ -47,6 +48,10 @@ const Header = styled(Container)`
     text-align: left;
     color: #f62434;
   }
+  @media (max-width: 382px){
+    align-items: flex-start;
+    
+  }
 `;
 const Branches = styled(Container)`
   width: 77%;
@@ -54,8 +59,26 @@ const Branches = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  
+  padding: 0;
   margin-top: 59px;
+  @media (max-width: 1660px){
+    // flex-wrap: wrap;
+    width: 85%;
+  }
+  @media (max-width: 1500px){
+    width: 95%;
+  }
+  @media (max-width: 1365px){
+    width: 100%;
+  }
+  @media (max-width: 1228px){
+    width: 85%;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 747px){
+    width: 100%;
+    flex-wrap: wrap;
+  }
 `;
 
 const Branch = styled(Container)`
@@ -79,6 +102,9 @@ const Branch = styled(Container)`
   align-items: center;
   z-index: 2;
   cursor: pointer;
+  @media (max-width: 1228px){
+    margin-top: 15px;
+  }
 `;
 const Image360 = styled.img`
   //   width: 283px;
