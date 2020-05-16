@@ -264,7 +264,7 @@ const sliderCards = cardsArray.map((card, i) => {
           Sale <span>${card.sale}</span>
         </div>
         <div className="card-img">
-          <img src={card.img} />
+          <img src={card.img} alt="product"/>
         </div>
         <div className="card-price">
           <p className="current-price">{card.cPrice}</p>
@@ -348,49 +348,3 @@ const TabContent = () => {
 };
 
 export default TabContent;
-
-// function NextArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <IoIosArrowForward
-//       style={{
-//         ...style,
-//         // color: "#e6ecef",
-//         // backgroundColor: "#ffffff",
-//         // backgroundSize: "cover",
-//         // width: "60px",
-//         // height: "60px",
-//         // padding: "20px",
-//         // border: "solid 1px #e6ecef",
-//         // borderRadius: "50%",
-//         // zIndex: "5",
-//       }}
-//       onClick={onClick}
-//       className={className}
-//     />
-//   );
-// }
-
-// function PrevArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div>
-//       <IoIosArrowBack
-//         style={{
-//           ...style,
-//           color: "#e6ecef",
-//           backgroundColor: "#ffffff",
-//           backgroundSize: "cover",
-//           width: "60px",
-//           height: "60px",
-//           padding: "20px",
-//           border: "solid 1px #e6ecef",
-//           borderRadius: "50%",
-//           zIndex: "5",
-//         }}
-//         onClick={onClick}
-//         className={className}
-//       />
-//     </div>
-//   );
-// }

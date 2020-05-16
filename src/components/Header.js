@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Container, Carousel, Image } from "react-bootstrap";
 import styled from "styled-components";
 import Slide1 from "../assets/images/header/slide1.jpg";
@@ -225,6 +225,9 @@ const Header = () => {
         break;
       case "ind-3":
         setIndex(2);
+        break;
+      default:
+        setIndex(0);
         break;
     }
   };

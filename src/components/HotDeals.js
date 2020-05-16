@@ -220,21 +220,21 @@ const HotDeals = () => {
       </StyledTabs>
       <Products fluid>
         <Product>
-          <img src={image1} />
+          <img src={image1} alt="products"/>
           <section>
             <h4>Sports Products</h4>
             <p>SHOP NOW</p>
           </section>
         </Product>
         <Product>
-          <img src={image2} />
+          <img src={image2} alt="products"/>
           <section>
             <h4>Food Products</h4>
             <p>SHOP NOW</p>
           </section>
         </Product>
         <Product>
-          <img src={image3} />
+          <img src={image3} alt="products"/>
           <section>
             <h4>Smart Products</h4>
             <p>SHOP NOW</p>

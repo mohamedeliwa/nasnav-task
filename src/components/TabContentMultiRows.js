@@ -278,7 +278,7 @@ const sliderCards = cardsArray.map((card, i) => {
           Sale <span>${card.sale}</span>
           </div> */}
         <div className="card-img">
-          <img src={card.img} />
+          <img src={card.img} alt="product"/>
         </div>
         <div className="card-price">
           <p className="current-price">{card.cPrice}</p>
@@ -330,7 +330,6 @@ const TabContent = () => {
           slidesToShow: 2,
         },
       },
-      ,
       {
         breakpoint: 660,
         settings: {
