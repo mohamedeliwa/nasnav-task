@@ -276,7 +276,7 @@ const PrevArrow = styled.button`
 `;
 const sliderCards = cardsArray.map((card, i) => {
   return (
-    <Container key={i}>
+    <Container key={i} style={{margin: "0 !important"}} fluid>
       <Card>
         {/* <div className="card-header">
           Sale <span>${card.sale}</span>

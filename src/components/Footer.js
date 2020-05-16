@@ -16,6 +16,14 @@ const Head = styled(Container)`
   // background-color: red;
   display: flex;
   padding: 0;
+  @media (max-width: 1380px) {
+    height: 370px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 815px) {
+    flex-wrap: wrap;
+    height: auto;
+  }
 `;
 const Tail = styled(Container)`
   height: 100px;
@@ -42,6 +50,14 @@ const Tail = styled(Container)`
     width: 217px;
     height: 36px;
   }
+  @media (max-width: 680px) {
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    img {
+      margin: 10px auto; 
+    }
+  }
 `;
 const Navigation = styled(Container)`
   height: 323px;
@@ -60,6 +76,11 @@ const Reach = styled(Container)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 1380px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 370px;
+  }
 `;
 const Logo = styled(Container)`
   // background-color: green;
@@ -148,6 +169,15 @@ const Subscribe = styled(Container)`
       }
     }
   }
+  @media (max-width: 400px){
+    max-width: 365px;
+    max-height: 145.9px;
+    margin: 0;
+    padding: 0;
+    div {
+      font-size: 17px;
+    }
+  }
 `;
 const Find = styled(Container)`
   width: 365px;
@@ -191,6 +221,15 @@ const Find = styled(Container)`
     &:active {
       outline: none !important;
       box-shadow: none;
+    }
+  }
+  @media (max-width: 400px){
+    max-width: 365px;
+    max-height: 145.9px;
+    margin: 0; 
+    padding: 0;
+    div {
+        font-size: 17px;
     }
   }
 `;
