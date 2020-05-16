@@ -104,6 +104,20 @@ const Header = styled(Container)`
     text-align: left;
     color: #f62434;
   }
+  @media (max-width: 649px){
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  @media (max-width: 335px){
+    padding-right: 0;
+     p {
+      font-size: 17px;
+     }
+  }
 `;
 const StyledSlider = styled(Slider)`
   //   background-color: grey;
@@ -148,8 +162,17 @@ const Features = styled(Container)`
   width: 85%;
   margin-top: 52px;
   margin-bottom: 52px;
+  padding: 0;
+
+  @media (max-width: 1649px){
+    width: 100%;
+  }
+  @media (max-width: 1000px){
+    flex-wrap: wrap;
+  }
 `;
 const Feature = styled(Container)`
+padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -183,6 +206,28 @@ const Feature = styled(Container)`
       color: #303637;
     }
   }
+  @media (max-width: 1393px){
+    justify-content: center;
+    span{
+      margin: 0;
+    }
+  }
+  @media (max-width: 1195px){
+    section {
+      width: 66px;
+    height: 66px;
+    }
+    span {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+  @media (max-width: 1000px){
+    flex-basis: 50%;
+  }
+  @media (max-width: 538px){
+    flex-basis: 100%;
+  }
 `;
 
 const ShoppingByCategory = () => {
@@ -194,6 +239,38 @@ const ShoppingByCategory = () => {
     speed: 100,
     slidesToShow: 6,
     slidesToScroll: 1,
+    responsive: [
+     {
+      breakpoint: 1280,
+      settings: {
+        slidesToShow: 5,
+      }
+     },
+     {
+      breakpoint: 1075,
+      settings: {
+        slidesToShow: 4,
+      }
+     },
+     {
+      breakpoint: 856,
+      settings: {
+        slidesToShow: 3,
+      }
+     },
+     {
+      breakpoint: 646,
+      settings: {
+        slidesToShow: 2,
+      }
+     },
+     {
+      breakpoint: 433,
+      settings: {
+        slidesToShow: 1,
+      }
+     }
+    ]
   };
 
   const SliderCards = sliderImagesArr.map((image, i) => {

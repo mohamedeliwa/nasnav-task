@@ -6,7 +6,8 @@ import Slide2 from "../assets/images/header/slide2.jpg";
 import { FaAngleRight } from "react-icons/fa";
 // Styles using Styled-Component
 const Wrapper = styled(Container)`
-  height: 474px;
+  max-height: 474px;
+
   background-color: #ffffff;
   padding: 0;
   position: relative;
@@ -16,7 +17,8 @@ const Wrapper = styled(Container)`
 `;
 
 const StyledCarousel = styled(Carousel)`
-  height: 474px;
+  // height: 474px;
+  max-height: 474px;
 
   overflow: hidden;
 `;
@@ -159,14 +161,13 @@ const StyledCaption = styled(Carousel.Caption)`
       color: #0056a8;
       background: #ffffff;
       box-shadow: none;
-
     }
   }
   @media (max-width: 359px) {
     padding: 5px 50px 5px 5px;
     top: 150px;
   }
-  @media (max-width: 326px){
+  @media (max-width: 326px) {
     top: 120px;
   }
 `;
