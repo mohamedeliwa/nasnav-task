@@ -4,8 +4,8 @@ import styled from "styled-components";
 import TabContent from "./TabContentMultiRows";
 
 const Wrapper = styled(Container)`
-  width: 1676px;
-  height: 1284px;
+  max-width: 1676px;
+  max-height: 1284px;
   padding: 0;
   padding-top: 64px;
 
@@ -69,6 +69,38 @@ const Header = styled(Container)`
       border-bottom: 3px solid #0056a8;
     }
   }
+  @media (max-width: 1040px){
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    header {
+      h3 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+  @media (max-width: 658px){
+      nav {
+        justify-content: space-around;
+      }
+  }
+  @media (max-width: 600px){
+    nav {
+      width: auto;
+      justify-content: center;
+      p {
+        margin-left: 20px;
+      }
+    }
+}
+@media (max-width: 600px){
+  nav {
+    flex-wrap: wrap;
+  }
+}
 `;
 const StyledTabs = styled(Tabs)`
   //   display: flex;

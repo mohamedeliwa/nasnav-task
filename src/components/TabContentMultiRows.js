@@ -81,8 +81,26 @@ const cardsArray = [
 const Wrapper = styled(Container)`
   //   background-color: #eee;
   margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  padding: 0;
 `;
+const StyledSlider = styled(Slider)`
+  max-width: 1258px;
+  margin-left: -55px;
+  margin-bottom: 20px;
+  @media (max-width: 1336px) {
+    max-width: 1100px;
+    margin-left: 0px;
+  }
+  @media (max-width:  1080px) {
+    max-width: 980px;
 
+  }
+  @media (max-width:  995px) {
+    max-width: 650px;
+  }
+`;
 const Card = styled(Container)`
   width: 298px;
   height: 491px;
@@ -202,14 +220,26 @@ const NextArrow = styled.button`
   border-radius: 50%;
   position: absolute;
   bottom: -37px;
-  right: 745px;
+  right: 45%; //745px;
   color: #e6ecef;
   display: flex;
   justify-content: center;
-    &:focus,
+  &:focus,
   &:active {
     outline: none !important;
     box-shadow: none;
+  }
+  @media (max-width: 1531px) {
+    right: 42%;
+  }
+  @media (max-width: 959px) {
+    right: 39%;
+  }
+  @media (max-width: 703px) {
+    right: 35%;
+  }
+  @media (max-width: 529px) {
+    right: 25%;
   }
 `;
 const PrevArrow = styled.button`
@@ -222,14 +252,26 @@ const PrevArrow = styled.button`
   border-radius: 100%;
   position: absolute;
   bottom: -37px;
-  left: 747px;
+  left: 45%; //747px;
   color: #e6ecef;
   display: flex;
   justify-content: center;
-    &:focus,
+  &:focus,
   &:active {
     outline: none !important;
     box-shadow: none;
+  }
+  @media (max-width: 1531px) {
+    left: 42%;
+  }
+  @media (max-width: 959px) {
+    left: 39%;
+  }
+  @media (max-width: 703px) {
+    left: 35%;
+  }
+  @media (max-width: 529px) {
+    left: 25%;
   }
 `;
 const sliderCards = cardsArray.map((card, i) => {
@@ -279,22 +321,40 @@ const TabContent = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     rows: 2,
+    responsive: [
+      {
+        breakpoint: 1336,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 995,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      ,
+      {
+        breakpoint: 660,
+        settings: {
+          rows: 1,
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
-    <Wrapper>
-      <Slider
-        {...settings}
-        style={{ width: "1258px", marginLeft: "-55px", marginBottom: "20px" }}
-        ref={(c) => (slider = c)}
-      >
+    <Wrapper fluid>
+      <StyledSlider {...settings} ref={(c) => (slider = c)}>
         {sliderCards}
         {sliderCards}
-      </Slider>
-      <PrevArrow className="button" onClick={previous}> 
+      </StyledSlider>
+      <PrevArrow className="button" onClick={previous}>
         <IoIosArrowBack />
       </PrevArrow>
-      <NextArrow className="button" onClick={next}> 
-        <IoIosArrowForward  />
+      <NextArrow className="button" onClick={next}>
+        <IoIosArrowForward />
       </NextArrow>
     </Wrapper>
   );
