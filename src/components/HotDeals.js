@@ -5,6 +5,7 @@ import TabContent from "./TabContent";
 import image1 from "../assets/images/hotdeals/Layer_35.png";
 import image2 from "../assets/images/hotdeals/Layer_43.png";
 import image3 from "../assets/images/hotdeals/Layer_37.png";
+
 const Wrapper = styled(Container)`
   //   height: 416px;
 
@@ -25,6 +26,7 @@ const Header = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  // padding: 0;
   header {
     // background-color: yellow;
     h3 {
@@ -73,6 +75,38 @@ const Header = styled(Container)`
       border-bottom: 3px solid #0056a8;
     }
   }
+  @media (max-width: 1040px){
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    header {
+      h3 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+  @media (max-width: 658px){
+      nav {
+        justify-content: space-around;
+      }
+  }
+  @media (max-width: 600px){
+    nav {
+      width: auto;
+      justify-content: center;
+      p {
+        margin-left: 20px;
+      }
+    }
+}
+@media (max-width: 600px){
+  nav {
+    flex-wrap: wrap;
+  }
+}
 `;
 const StyledTabs = styled(Tabs)`
   //   display: flex;

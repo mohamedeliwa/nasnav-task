@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import  Container  from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container";
 import styled from "styled-components";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import image1 from "../assets/images/hotdeals/Layer_17.png";
@@ -43,10 +43,58 @@ const cardsArray = [
   },
 ];
 const Wrapper = styled(Container)`
-  //   background-color: #eee;
+    // background-color: grey;
   margin-top: 40px;
-`;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  .controls-overlay { 
+    background-color: grey;
+    position relative;
+    width: 1258px;
+    marginBottom: 20px;
+    height: 0px;
+    @media (max-width: 1365px){
+      width: 1150px;
+    }
+    @media (max-width: 1246px){
+      max-width: 990px;
+    }
+    @media (max-width: 1086px){
+      width: 700px;
+    }
+    @media (max-width: 793px){
+      width: 650px;
+    }
+    @media (max-width: 746px){
+      width: 350px;
+    }
 
+  }
+`;
+const StyledSlider = styled(Slider)`
+ max-width: 1258px;
+// background-color: yellow;
+// marginLeft: -55px;
+marginBottom: 20px;
+@media (max-width: 1246px){
+  max-width: 990px;
+}
+@media (max-width: 1086px){
+  max-width: 750px;
+}
+@media (max-width: 793px){
+  max-width: 650px;
+}
+@media (max-width: 746px){
+  max-width: 350px;
+}
+@media (max-width: 443px){
+  marginLeft: -100px;
+}
+`;
 const Card = styled(Container)`
   width: 298px;
   height: 491px;
@@ -155,105 +203,194 @@ const Card = styled(Container)`
     }
   }
 `;
+const NextArrow = styled.button`
+  font-size: 30px;
+  width: 74.7px;
+  height: 74.7px;
+  border: solid 1px #e6ecef;
+  background-color: #ffffff;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: -310px;
+  right: -40px;
+  color: #e6ecef;
+  display: flex;
+  justify-content: center;
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none;
+  }
+  @media (max-width: 443px){
+    right: 10px;
+  }
+  @media (max-width: 345px){
+    right: 20px;
+  }
+`;
+const PrevArrow = styled.button`
+  font-size: 30px;
+  width: 74.7px;
+  height: 74.7px;
+  border: solid 1px #e6ecef;
+  background-color: #ffffff;
+  display: inline-block;
+  border-radius: 100%;
+  position: absolute;
+  top: -310px;
+  left: -20px;
+  color: #e6ecef;
+  display: flex;
+  justify-content: center;
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none;
+  }
+  @media (max-width: 443px){
+    left: 10px;
+  }
+  @media (max-width: 345px){
+    left: 20px;
+  }
+`;
 
-function NextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <IoIosArrowForward
-      style={{
-        ...style,
-        color: "#e6ecef",
-        backgroundColor: "#ffffff",
-        backgroundSize: "cover",
-        width: "60px",
-        height: "60px",
-        padding: "20px",
-        border: "solid 1px #e6ecef",
-        borderRadius: "50%",
-        zIndex: "5",
-      }}
-      onClick={onClick}
-      className={className}
-    />
-  );
-}
-
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div>
-      <IoIosArrowBack
-        style={{
-          ...style,
-          color: "#e6ecef",
-          backgroundColor: "#ffffff",
-          backgroundSize: "cover",
-          width: "60px",
-          height: "60px",
-          padding: "20px",
-          border: "solid 1px #e6ecef",
-          borderRadius: "50%",
-          zIndex: "5",
-        }}
-        onClick={onClick}
-        className={className}
-      />
-    </div>
-  );
-}
 const sliderCards = cardsArray.map((card, i) => {
-    return (
-      <Container key={i}>
-        <Card>
-          <div className="card-header">
+  return (
+    <Container key={i}>
+      <Card>
+        <div className="card-header">
           Sale <span>${card.sale}</span>
-          </div>
-          <div className="card-img">
-            <img src={card.img} />
-          </div>
-          <div className="card-price">
-            <p className="current-price">{card.cPrice}</p>
-            <p className="prev-price">{card.pPrice}</p>
-          </div>
-          <div className="card-name">{card.name}</div>
-          <div className="card-select">
-            <select name="num" id="num-select">
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-              <option value="20">20</option>
-            </select>
-            <button>Add</button>
-          </div>
-          <div className="card-updated">
-            <p>Last Update: {card.updated}</p>
-          </div>
-        </Card>
-      </Container>
-    );
-  }) 
+        </div>
+        <div className="card-img">
+          <img src={card.img} />
+        </div>
+        <div className="card-price">
+          <p className="current-price">{card.cPrice}</p>
+          <p className="prev-price">{card.pPrice}</p>
+        </div>
+        <div className="card-name">{card.name}</div>
+        <div className="card-select">
+          <select name="num" id="num-select">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+          <button>Add</button>
+        </div>
+        <div className="card-updated">
+          <p>Last Update: {card.updated}</p>
+        </div>
+      </Card>
+    </Container>
+  );
+});
 const TabContent = () => {
+  let slider;
+  const next = () => {
+    slider.slickNext();
+  };
+  const previous = () => {
+    slider.slickPrev();
+  };
   const settings = {
     dots: false,
-    arrows: true,
+    arrows: false,
     infinite: true,
     speed: 100,
     slidesToShow: 4,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1365,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 1086,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 746,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
-    <Wrapper>
-      <Slider
+    <Wrapper fluid>
+      <StyledSlider
         {...settings}
-        style={{ width: "1258px", marginLeft: "-55px", marginBottom: "20px" }}
+        // style={{  }}
+        ref={(c) => (slider = c)}
       >
-        {sliderCards}{sliderCards}
- 
-      </Slider>
+        {sliderCards}
+        {sliderCards}
+      </StyledSlider>
+      <div className= "controls-overlay">
+        <PrevArrow className="button" onClick={previous}>
+          <IoIosArrowBack />
+        </PrevArrow>
+        <NextArrow className="button" onClick={next}>
+          <IoIosArrowForward />
+        </NextArrow>
+      </div>
     </Wrapper>
   );
 };
 
 export default TabContent;
+
+// function NextArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <IoIosArrowForward
+//       style={{
+//         ...style,
+//         // color: "#e6ecef",
+//         // backgroundColor: "#ffffff",
+//         // backgroundSize: "cover",
+//         // width: "60px",
+//         // height: "60px",
+//         // padding: "20px",
+//         // border: "solid 1px #e6ecef",
+//         // borderRadius: "50%",
+//         // zIndex: "5",
+//       }}
+//       onClick={onClick}
+//       className={className}
+//     />
+//   );
+// }
+
+// function PrevArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div>
+//       <IoIosArrowBack
+//         style={{
+//           ...style,
+//           color: "#e6ecef",
+//           backgroundColor: "#ffffff",
+//           backgroundSize: "cover",
+//           width: "60px",
+//           height: "60px",
+//           padding: "20px",
+//           border: "solid 1px #e6ecef",
+//           borderRadius: "50%",
+//           zIndex: "5",
+//         }}
+//         onClick={onClick}
+//         className={className}
+//       />
+//     </div>
+//   );
+// }
